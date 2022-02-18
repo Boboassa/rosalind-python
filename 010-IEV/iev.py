@@ -18,15 +18,10 @@ dataset = dataset * OFFSPRING
 # Aa x Aa .75
 # Aa x aa .5
 # aa x aa 0
-PROB = np.array([1, 1, 1, 0.75, 0.5, 0])
-
-final = dataset * PROB
+PROB = [1, 1, 1, 0.75, 0.5, 0]
 
 # Sum the different values
-total = 0
+total = sum([a*b for a, b in zip(dataset, PROB)])
 
-for num in final:
-    total = total + num
-
-print(final)
+# Print
 print(total)
